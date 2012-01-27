@@ -18,5 +18,5 @@ for record in SeqIO.parse(handle, "fastq") :
         print record.format("fastq").rstrip()
         i +=1
     else:
-        exit("FINI")
+        exit("Voila C'EST FINI")
 handle.close()
