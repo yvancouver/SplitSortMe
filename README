@@ -1,0 +1,1 @@
+the splitMeBioPython should berenamed SortCleanedReads.py, how to do this ? git mv SplitMeBioPython.py SortCleanedReads.py
