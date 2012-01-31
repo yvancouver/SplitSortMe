@@ -1,1 +1,6 @@
 100*
+.project
+.pydev*
+.DS_Store
+OnlyInR*
+Common*
