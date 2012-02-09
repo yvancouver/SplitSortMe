@@ -22,11 +22,12 @@ def CreateList(f,R_list,j):
     
     return R_list
 
-def FilterAll(f,diff_R_sym):
+def FilterAll(f,diff_R_sym,j):
     """ filter the original fastq file with the list of reads
     
     """
-    d = open("CommonR1_2","w+")
+    target = "CommonR"+str(j)
+    d = open(target,"w+")
     for record in SeqIO.parse(handle, "fastq") :
         if record.id not in diff_R_sym:
             d.write(record.format("fastq"))
@@ -62,9 +63,11 @@ diff_R_sym=list(set(R1).symmetric_difference(set(R2)))
 #print len(diff_R_sym)
 
 for f in files:
+    j = 1
     handle =open(f,"rU")
-    FilterAll(handle,diff_R_sym)
+    FilterAll(handle,diff_R_sym,j)
     handle.close()
+    j += 1
 
 handle = open(argv[1],"rU")
 d = open("OnlyInR1.fastq","w+")
