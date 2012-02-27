@@ -1,3 +1,7 @@
+# needs to create a series of folder before
+## for ((i=1;$i<=100;i=$(($i+1)))); do mkdir $i;mv Diag-HaloBRCA1A-test-1_ATCACG_L004_R1_001.pf.fastq$i $i ; mv Diag-HaloBRCA1A-test-1_ATCACG_L004_R2_001.pf.fastq$i $i ;done
+## the workflow file shopuld contain the index of the splitted fastq files. and have the correct permission 755
+#
 import re
 import sys
 import os

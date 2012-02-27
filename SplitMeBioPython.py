@@ -1,3 +1,6 @@
+#
+## ToDo should create a directory where the splitted data should go
+
 from sys import argv
 from Bio import SeqIO
 import math
@@ -19,17 +22,19 @@ print "X " , x
 
 i = 0
 j = 1
-target = argv[1]+str(j)
+target = argv[1]+"_"+str(j)
 d = open(target,"w+")
 source = open(argv[1],"rU")
 
 for record in SeqIO.parse(source, "fastq") :
     if i <= x:
-         i += 1
-         d.write(record.format("fastq"))
+        i += 1
+        #d.write(str(i))
+        d.write(record.format("fastq"))
     else:
         d.write(record.format("fastq"))
+        d.write("\n")
         i = 0
         j += 1
-        target = argv[1]+str(j)
+        target = argv[1]+"_"+str(j)
         d =open(target,"w+")
