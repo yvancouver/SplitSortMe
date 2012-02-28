@@ -1,6 +1,6 @@
 # needs to create a series of folder before
 ## for ((i=1;$i<=100;i=$(($i+1)))); do mkdir $i;mv Diag-HaloBRCA1A-test-1_ATCACG_L004_R1_001.pf.fastq$i $i ; mv Diag-HaloBRCA1A-test-1_ATCACG_L004_R2_001.pf.fastq$i $i ;done
-## the workflow file shopuld contain the index of the splitted fastq files. and have the correct permission 755
+## the workflow file should contain the index of the splitted fastq files. and have the correct permission 755
 #
 import re
 import sys
@@ -36,5 +36,6 @@ for dirname, dirnames, filenames in os.walk('/Users/yvans/Home/Analysis/BRCA_ana
         workflow = str(os.path.join(dirname,dir,"workflow"))
         folder_write_workflow = str(os.path.join(dirname,dir))
         d = open(workflow,"a+")
+        os.chmod(str(os.path.join(dirname,dir,"workflow")),"0744")
         writeWorkFlow(R1,R2,d,folder_write_workflow,str(dir))
         
