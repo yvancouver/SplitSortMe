@@ -33,7 +33,8 @@ for record in SeqIO.parse(source, "fastq") :
         d.write(record.format("fastq"))
     else:
         d.write(record.format("fastq"))
-        d.write("\n")
+        if i == x:
+            d.write("\n")
         i = 0
         j += 1
         target = argv[1]+"_"+str(j)
