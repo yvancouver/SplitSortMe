@@ -1,5 +1,6 @@
 #
 ## ToDo should create a directory where the splitted data should go
+## usage SplitMeBioPython.py <file> <number of sub files>
 
 from sys import argv
 from Bio import SeqIO
@@ -14,7 +15,7 @@ for record in SeqIO.parse(source, "fastq"):
     i += 1
 
 print "I ", i
-x = math.ceil(i/100.0)
+x = math.ceil(i/float(argv[2]))
 print "X " , x
 #x=1763637.0
 

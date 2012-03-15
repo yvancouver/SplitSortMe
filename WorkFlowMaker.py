@@ -28,8 +28,9 @@ def writeWorkFlow(R1,R2,target,folder_write_workflow,index):
 
 i = 1  
 
-for dirname, dirnames, filenames in os.walk('/Users/yvans/Home/Analysis/BRCA_analysis_01.12.2012/Sample_Diag-HaloBRCA1A-test-1/ReducedDataSet/', topdown=True):
+for dirname, dirnames, filenames in os.walk('/Users/yvans/Home/Analysis/BRCA_analysis_01.12.2012/Sample_Diag-HaloBRCA1A-test-8/ReducedDataSet/', topdown=True):
     for dir in dirnames:
+    	print os.listdir(os.path.join(dirname,dir))
         (target1,target2) = os.listdir(os.path.join(dirname,dir))
         R1 = str(os.path.join(dirname,dir,target1))
         R2 = str(os.path.join(dirname,dir,target2))
