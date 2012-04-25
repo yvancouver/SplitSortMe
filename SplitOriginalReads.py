@@ -7,20 +7,13 @@ import doctest
 from sys import argv
 import textwrap
 
-helpstr = '''SplitOriginalReads is use to split a fastq file into smaller files
-This was made in order to analyse the first HTS pilot experiment we had at Ulleval.
-
-Author: Yvan Strahm (yvan.strahm@gmail.com)
-License: GPL 3.0 (http://www.gnu.org/licenses/gpl-3.0.txt)'''
-#parser = ArgumentParser(description="SplitOriginalReads is use to split a fastq file into smaller files.\nThis was made in order to analyse the first HTS pilot experiment we had at Ulleval",
-#                        epilog="Author: Yvan Strahm (yvan.strahm@gmail.com) License: GPL 3.0 (http://www.gnu.org/licenses/gpl-3.0.txt)")
 parser = argparse.ArgumentParser(prog='SplitOriginalReads',
                         formatter_class=argparse.RawDescriptionHelpFormatter,
                         description=textwrap.dedent('''\
-                            SplitOriginalReads is use to split a fastq file into smaller files.
-                            This was made in order to analyse the first HTS pilot experiment we had at Ulleval
-                                Author: Yvan Strahm (yvan.strahm@gmail.com)
-                                License: GPL 3.0 (http://www.gnu.org/licenses/gpl-3.0.txt
+                            SplitOriginalReads is use to split a fastq file into smaller files
+                            This was made in order to analyse the first HTS pilot experiment we had at Ulleval.
+                            Author: Yvan Strahm (yvan.strahm@gmail.com)
+                            License: GPL 3.0 (http://www.gnu.org/licenses/gpl-3.0.txt)
                             '''))
 
 parser.add_argument('-f', metavar='F', type=str, dest='files', action='append',
